@@ -1,8 +1,15 @@
+#imguniv
+{
+    padding-left: 275px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
 table {
  border-width:1px; 
  border-style:solid; 
  border-color:black;
- width:50%;
+
  }
 td { 
  border-width:1px;
@@ -11,7 +18,30 @@ td {
 
  }
 
-#id1
+#td1
 {
-    width: 100%;
+    width: 600px;
 }
+
+#td11
+{
+    width: 150px;
+}
+#td22
+{
+    width: 100px;
+}
+#td2
+{
+    width: 650px;
+}
+#td3
+{
+    width: 600px;
+}
+#centre 
+{
+    padding-bottom: 40px;
+}
+
+
