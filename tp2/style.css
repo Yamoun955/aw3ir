@@ -1,0 +1,33 @@
+
+#form1
+{
+    background-color: white;
+    padding-left: 200px;
+    padding-bottom: 20px;
+}
+
+input
+{
+display: block;   
+}
+
+#message
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+#error
+{
+    background-color: red;
+    
+    text-align: center;
+    
+}
+#result
+{
+    background-color: green;
+    
+     text-align: center;
+    
+}
