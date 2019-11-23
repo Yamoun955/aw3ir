@@ -11,6 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <style>
+          
           body{
               background-color: #e9ebee;              
               font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -19,15 +20,133 @@
               max-width: 800px;              
           }
         </style>
+
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script>
+            $( document ).ready(function() {
+                console.log( "DOM ready!" );
+                $( function() {
+                $( "#datepicker" ).datepicker({
+                    altFormat: "dd-mm-yy",
+                    maxDate: "+0d +0m +0y"
+                    
+                });
+                 } );
+                
+                $("#bt").click(function(){
+                if($("#name").val().length==0 || $("#firstName").val().length==0 || $("#datepicker").val().length==0 || 
+                       $("#address").val().length==0 || $("#mail").val().length==0) {
+                  $(".modal-title").html("Message Modal");  
+                  $(".modal-body").html("Veuillez remplir tout les champs svp"); 
+                }
+                else if($("input").val().length != 0){
+                $(".modal-title").html('\<p>Bienvenu '+ $("#name").val() + '</p\>' );
+                
+                $(".modal-body").html('Vous etes né le ' +  $("#datepicker").val() + ' et vous habitez ' + '<img src="https://maps.googleapis.com/maps/api/staticmap?markers='+$("#address").val()+'&zoom=7&size=200x150&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" /\>' + '\<br\>' + '\<strong style="color:blue;">' +$("#address").val() + '</strong\>');
+
+                }
+             
+            });
+                });
+        
+        
+        
+        
+        </script>
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
         <!--<link rel="stylesheet" href="style.css">-->
         <!--<script src="main.js"></script>-->
     </head>
     <body>        
-        <h1>tp3</h1>
+        
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+        
+        <div class="container-fluid">
+            
+            
+            <div class="row">
+            <form style="margin: 50px;">
+                
+            <div class="form-group">
+                <label for="name">Nom:</label>
+                <input id="name" type="text" class="form-control ">
+            </div>
+            <div class="form-group">
+                <label for="firstName">Prénom:</label>
+                <input id="firstName" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="bd">Date de Naissance:</label>
+                <input id="datepicker" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address">Adresse:</label>
+                <input id="address" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input id="mail" type="email" class="form-control">
+            </div>
+            <button id="bt" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Valider</button>
+           
+                <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p>Corps de la modal à modifier après validation du formulaire</p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+                <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p>Corps de la modal à modifier après validation du formulaire</p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+            </form>
+            
+
+         </div>   
+        </div>
     </body>
 </html>
